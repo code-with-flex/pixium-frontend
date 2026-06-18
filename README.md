@@ -27,13 +27,14 @@ The frontend is the player-facing experience for Pixium. It renders the shared c
 ### Prerequisites
 
 - Node.js 20+
+- pnpm
 - [Freighter wallet](https://freighter.app) browser extension
 - A running [backend](https://github.com/Pixium-Org/backend) instance
 
 ### Install
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Environment
@@ -52,14 +53,14 @@ NEXT_PUBLIC_NETWORK=testnet
 ### Run (Development)
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 ### Build (Production)
 
 ```bash
-npm run build
-npm run start
+pnpm run build
+pnpm run start
 ```
 
 ---
@@ -84,34 +85,6 @@ npm run start
 
 ---
 
-## Project Structure
-
-```
-frontend/
-├── app/                  # Next.js app router
-│   ├── page.tsx          # Main canvas page
-│   ├── leaderboard/
-│   ├── quests/
-│   └── factions/
-├── components/
-│   ├── Canvas/           # Canvas render and interaction
-│   ├── ColorPicker/
-│   ├── CooldownTimer/
-│   ├── WalletConnect/
-│   └── ui/               # Shared UI primitives
-├── hooks/
-│   ├── useCanvas.ts      # Canvas state and WebSocket
-│   ├── useWallet.ts      # Freighter wallet connection
-│   └── usePixelPlace.ts  # Transaction building and submission
-├── lib/
-│   ├── stellar.ts        # Stellar SDK helpers
-│   └── api.ts            # Backend API client
-├── .env.example
-└── package.json
-```
-
----
-
 ## Wallet Integration
 
 Pixium uses [Freighter](https://freighter.app) for Stellar wallet connections. Pixel placement transactions are built client-side and signed by the player's wallet — the frontend never holds private keys.
@@ -127,11 +100,10 @@ const signedTx = await signTransaction(xdr, { network: "TESTNET" });
 
 ## Contributing
 
-See the root [contributing guide](#). Run lint and format checks before submitting a PR.
+See the root [contributing guide](#). Run lint checks before submitting a PR.
 
 ```bash
-npm run lint
-npm run format
+pnpm run lint
 ```
 
 Branch format: `feature/<issue-number>-short-description`

@@ -19,7 +19,7 @@ For general contribution guidelines (branching, commits, code of conduct), see t
 ```bash
 git clone https://github.com/Pixium-Org/frontend.git
 cd frontend
-npm install
+pnpm install
 ```
 
 Copy the example env file and fill in your values:
@@ -40,7 +40,7 @@ NEXT_PUBLIC_NETWORK=testnet
 ## Running Locally
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 Open [http://localhost:3001](http://localhost:3001) in your browser.
@@ -50,8 +50,8 @@ Open [http://localhost:3001](http://localhost:3001) in your browser.
 ## Building for Production
 
 ```bash
-npm run build
-npm run start
+pnpm run build
+pnpm run start
 ```
 
 ---
@@ -59,8 +59,11 @@ npm run start
 ## Running Tests
 
 ```bash
-npm run test
+pnpm run test
 ```
+
+> No test framework is wired up yet — this command doesn't exist in
+> `package.json` yet either. Tracked as a separate follow-up.
 
 ---
 
@@ -69,8 +72,8 @@ npm run test
 All PRs must pass lint and format checks:
 
 ```bash
-npm run lint
-npm run format
+pnpm run lint
+pnpm run format
 ```
 
 ---
@@ -79,7 +82,7 @@ npm run format
 
 1. Fork the repo and create a branch: `feature/<issue-number>-short-description`
 2. Make your changes and ensure the app builds without errors
-3. Run `npm run lint` and `npm run format`
+3. Run `pnpm run lint` and `pnpm run format`
 4. Open a PR targeting the `dev` branch
 5. Fill in the PR template and link the issue
 

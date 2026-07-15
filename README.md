@@ -90,11 +90,16 @@ pnpm run start
 Pixium uses [Freighter](https://freighter.app) for Stellar wallet connections. Pixel placement transactions are built client-side and signed by the player's wallet — the frontend never holds private keys.
 
 ```ts
-import { getPublicKey, signTransaction } from "@stellar/freighter-api";
+import { requestAccess, signTransaction } from "@stellar/freighter-api";
 
-const publicKey = await getPublicKey();
-const signedTx = await signTransaction(xdr, { network: "TESTNET" });
+const { address } = await requestAccess();
+const { signedTxXdr } = await signTransaction(xdr, {
+  networkPassphrase: "Test SDF Network ; September 2015",
+});
 ```
+
+(`getPublicKey` is deprecated in current `@stellar/freighter-api` —
+use `requestAccess`/`getAddress` instead.)
 
 ---
 
